@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shortt map / Fix</title>
+  <meta name="description" content="Scanne tes mappings FiveM : doublons, conflits, fichiers chiffrés. 100% local, rien n'est envoyé.">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-title="title.home">
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <div class="nav-wrap">
+    <header class="nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="" width="30" height="30">
+        <span>Shortt map <em>/ Fix</em></span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-item" id="discordLink" href="#" target="_blank" rel="noopener">
+          <svg class="nav-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .079.009c.12.1.246.198.373.292a.077.077 0 0 1-.007.128 12.3 12.3 0 0 1-1.873.891.077.077 0 0 0-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 0 0 .084.029 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03ZM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.956 2.418-2.157 2.418Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.946 2.418-2.157 2.418Z"/></svg>
+          <span class="hide-sm" data-i18n="nav.community">Communauté</span>
+        </a>
+        <button class="nav-item" id="langBtn" type="button">
+          <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg>
+          <span id="langLabel">FR</span>
+        </button>
+        <a class="btn btn-small" href="scanner.html"><span data-i18n="nav.open">Ouvrir le scanner</span> <span class="arrow">↗</span></a>
+      </nav>
+    </header>
+  </div>
+
+  <div class="wrap">
+    <!-- Hero -->
+    <section class="hero">
+      <span class="pill"><i></i><span data-i18n="hero.pill">100% local · aucun fichier n'est envoyé</span></span>
+      <h1 data-i18n="hero.title">Trouve les <span class="grad">conflits</span> entre tes mappings FiveM</h1>
+      <p data-i18n="hero.text">Glisse ton dossier <code>resources</code> : doublons, fichiers qui s'écrasent, fichiers chiffrés ou illisibles.
+        Récap téléchargeable, que tu peux rouvrir sur le site à tout moment.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="scanner.html"><span data-i18n="nav.open">Ouvrir le scanner</span> <span class="arrow">↗</span></a>
+        <a class="btn btn-ghost" href="#demo" data-i18n="hero.demo">Voir la démo</a>
+      </div>
+    </section>
+
+    <!-- Démo défilante -->
+    <section class="section" id="demo">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="demo.title">Tout ce que le scan<br>détecte pour toi</h2>
+          <p data-i18n="demo.text">Conflits, doublons, fichiers chiffrés… et pour chaque problème, quoi faire.</p>
+        </div>
+        <button class="play" data-marquee="reviewMarquee" type="button"></button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Avis Discord (liste dans assets/home.js) -->
+  <div class="marquee" id="reviewMarquee" hidden>
+    <div class="marquee-track"></div>
+  </div>
+
+  <div class="wrap">
+    <!-- Comment ça marche -->
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="steps.title">3 étapes, 30 secondes</h2>
+          <p data-i18n="steps.text">Pas d'installation, pas de compte. Ça tourne directement dans ton navigateur.</p>
+        </div>
+      </div>
+      <!-- Simulation animée (pilotée par assets/home.js) -->
+      <div class="flow" id="flow" aria-hidden="true">
+        <div class="flow-box" data-box="1">
+          <div class="flow-head">
+            <span class="flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></span>
+            <span data-i18n="flow.1">Dossier</span>
+          </div>
+          <div class="mini-drop">
+            <span class="mini-drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M12 11v5m0-5-2 2m2-2 2 2"/></svg></span>
+            <span data-i18n="flow.drop">Glisse ton dossier <code>resources</code></span>
+          </div>
+          <div class="mini-progress">
+            <div class="bar"><i id="flowBar"></i></div>
+            <span id="flowStatus"></span>
+          </div>
+        </div>
+        <div class="flow-line"><i class="flow-dot"></i></div>
+        <div class="flow-box" data-box="2">
+          <div class="flow-head">
+            <span class="flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></span>
+            <span data-i18n="flow.2">Conflits</span>
+          </div>
+          <div class="mini-list">
+            <div class="mini-row"><span class="pick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span class="mini-names">map_a <i>↔</i> map_b</span><span class="nfiles" data-i18n="flow.f4">4 fichiers</span></div>
+            <div class="mini-row"><span class="pick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span class="mini-names">map_a <i>↔</i> garage</span><span class="nfiles" data-i18n="flow.f2">2 fichiers</span></div>
+            <div class="mini-row"><span class="pick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span class="mini-names">hopital <i>↔</i> map_b</span><span class="nfiles" data-i18n="flow.f1">1 fichier</span></div>
+          </div>
+        </div>
+        <div class="flow-line"><i class="flow-dot"></i></div>
+        <div class="flow-box" data-box="3">
+          <div class="flow-head">
+            <span class="flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>
+            <span data-i18n="flow.3">Récap</span>
+          </div>
+          <div class="mini-export">
+            <div class="mini-total">2 fix × 10.00 € = 20.00 €</div>
+            <span class="btn btn-small mini-btn" data-i18n="sc.export">Télécharger le récap</span>
+          </div>
+          <div class="mini-recap">
+            <b data-i18n="flow.recap">Récapitulatif des fix</b>
+            <div class="r-pair"><span>map_a ↔ map_b</span><em>10.00 €</em></div>
+            <div class="r-pair"><span>map_a ↔ garage</span><em>10.00 €</em></div>
+            <div class="r-total">Total : 2 x 10.00 € = <b>20.00 €</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="how-steps">
+        <div><span class="how-num">01</span><h3 data-i18n="steps.1t">Glisse ton dossier</h3><p data-i18n="steps.1p">Ton dossier <code>resources</code> entier, ou juste <code>[maps]</code>. Rien n'est envoyé, tout reste sur ton PC.</p></div>
+        <div><span class="how-num">02</span><h3 data-i18n="steps.2t">Le scan compare tout</h3><p data-i18n="steps.2p">Chaque fichier du dossier <code>stream</code> est comparé : doublons, contenus différents et fichiers chiffrés.</p></div>
+        <div><span class="how-num">03</span><h3 data-i18n="steps.3t">Télécharge le récap</h3><p data-i18n="steps.3p">Coche les paires à facturer, télécharge le récap HTML et rouvre-le sur le site quand tu veux.</p></div>
+      </div>
+    </section>
+
+    <!-- Avant / après -->
+    <section class="section" id="avant-apres">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="ba.title">Avant / Après</h2>
+          <p data-i18n="ba.text">Fais glisser la barre pour comparer un serveur avant et après correction des conflits.</p>
+        </div>
+      </div>
+
+      <!-- Pour mettre tes propres screens : remplace le contenu de chaque .compare-layer
+           par <img src="assets/avant.jpg" alt="Avant"> / <img src="assets/apres.jpg" alt="Après">
+           et ajoute la classe has-img aux deux .compare-layer -->
+      <div class="compare" id="compare">
+        <div class="compare-layer compare-after">
+          <div class="mock-head"><h4 data-i18n="ba.after">Après correction</h4><span class="tag green" data-i18n="ba.clean">Serveur propre</span></div>
+          <div class="mock-stats">
+            <div><b style="color:var(--green)">0</b><span data-i18n="ba.conflicts">Conflits</span></div>
+            <div><b style="color:var(--green)">0</b><span data-i18n="ba.dups">Doublons</span></div>
+            <div><b style="color:var(--green)">0</b><span data-i18n="ba.unreadable">Illisibles</span></div>
+          </div>
+          <div class="mock-row">props_garage.ytd <span style="color:var(--green)" data-i18n="ba.a1">✓ une seule version</span></div>
+          <div class="mock-row">lodlights_medium009.ymap <span style="color:var(--green)" data-i18n="ba.a2">✓ fusionné</span></div>
+          <div class="mock-row">int_bureau_01.ydr <span style="color:var(--green)" data-i18n="ba.a3">✓ copies supprimées</span></div>
+        </div>
+        <div class="compare-layer compare-before">
+          <div class="mock-head"><h4 data-i18n="ba.before">Avant correction</h4><span class="tag red" data-i18n="ba.flicker">Textures qui clignotent</span></div>
+          <div class="mock-stats">
+            <div><b style="color:var(--red)">13</b><span data-i18n="ba.conflicts">Conflits</span></div>
+            <div><b style="color:var(--orange)">5</b><span data-i18n="ba.dups">Doublons</span></div>
+            <div><b style="color:var(--red)">1</b><span data-i18n="ba.unreadable">Illisibles</span></div>
+          </div>
+          <div class="mock-row">props_garage.ytd <span style="color:var(--red)" data-i18n="ba.b1">2 versions différentes</span></div>
+          <div class="mock-row">lodlights_medium009.ymap <span style="color:var(--red)" data-i18n="ba.b2">écrasé par une autre map</span></div>
+          <div class="mock-row">int_bureau_01.ydr <span style="color:var(--orange)" data-i18n="ba.b3">copié 3 fois</span></div>
+        </div>
+        <span class="compare-label l" data-i18n="ba.labelBefore">AVANT</span>
+        <span class="compare-label r" data-i18n="ba.labelAfter">APRÈS</span>
+        <div class="compare-handle"></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Avant / Après">
+      </div>
+    </section>
+
+    <!-- Partenaires (liste dans assets/home.js) -->
+    <section class="section" id="partenaires">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="partners.title">Nos partenaires</h2>
+          <p data-i18n="partners.text">Les serveurs et créateurs avec qui on travaille.</p>
+        </div>
+        <button class="play" data-marquee="partnerMarquee" type="button"></button>
+      </div>
+    </section>
+  </div>
+
+  <div class="marquee" id="partnerMarquee">
+    <div class="marquee-track"></div>
+  </div>
+
+  <div class="wrap">
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <div class="section-head"><div><h2 data-i18n="faq.title">Questions fréquentes</h2></div></div>
+      <details>
+        <summary data-i18n="faq.1q">Mes fichiers sont-ils envoyés quelque part ?</summary>
+        <p data-i18n="faq.1a">Non. Tout le scan se fait dans ton navigateur, rien ne quitte ton PC.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.2q">C'est quoi la différence entre « conflit » et « doublon » ?</summary>
+        <p data-i18n="faq.2a"><b>Doublon</b> : le même fichier (contenu identique) est présent dans plusieurs ressources. Tu peux supprimer les copies.<br>
+          <b>Conflit</b> : même nom de fichier mais contenu différent. Une seule version sera chargée par FiveM, l'autre est écrasée.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.3q">Quels fichiers sont scannés ?</summary>
+        <p data-i18n="faq.3a">Uniquement les fichiers de mapping du dossier <code>stream/</code> de chaque ressource (<code>.ymap</code>, <code>.ytyp</code>, <code>.ydr</code>, <code>.ytd</code>, <code>.ybn</code>…).
+          Un fichier qui n'a pas l'en-tête RAGE normal reçoit un cadenas : chiffré, corrompu ou mal exporté.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.4q">Quel navigateur utiliser ?</summary>
+        <p data-i18n="faq.4a">Chrome ou Edge de préférence : ce sont eux qui gèrent le mieux le glisser-déposer d'un dossier entier.</p>
+      </details>
+    </section>
+
+    <section class="cta">
+      <h2 data-i18n="cta.title">Prêt à nettoyer tes mappings ?</h2>
+      <p data-i18n="cta.text">Un scan, un récap, et tu sais exactement quoi corriger.</p>
+      <a class="btn" href="scanner.html"><span data-i18n="nav.open">Ouvrir le scanner</span> <span class="arrow">↗</span></a>
+    </section>
+  </div>
+
+  <footer>
+    <span>© Shortt map / Fix</span>
+    <span data-i18n="foot.disclaimer">Non affilié à Rockstar Games, Take-Two ou Cfx.re.</span>
+  </footer>
+
+  <script src="assets/site.js"></script>
+  <script src="assets/home.js"></script>
+</body>
+</html>
